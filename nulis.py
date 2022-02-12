@@ -6,7 +6,8 @@ import requests
 import shutil
 import os, time
 import json
-url="https://fdz-app.herokuapp.com/api/tulis?nama="
+
+url="https://ferdiz-afk.my.id/api/Fmake/nulis?nama="
 logo="""
 ╲╲╲╲╲┏━━━┓╱╱╱╱╱
 ╲┏━━━┻━━━┻━━━┓╱         Bot Nulis
@@ -36,13 +37,13 @@ def biasa():
     r = requests.get(url+nama+"&no="+nomor+"&kelas="+kelas+"&text="+tulis, stream = True)
     if r.status_code == 200:
         r.raw.decode_content = True
-        with open('tulis.jpg','wb') as f:
+        with open('/sdcard/tulis.jpg','wb') as f:
             shutil.copyfileobj(r.raw, f)
             print('')
             print('tunggu sebentar bos')
             time.sleep(3)
             print('')
-            print('Berhasil, nama file:','tulis.jpg')
+            print('Berhasil, nama file:','/sdcard/tulis.jpg')
     else:
         print('Terjadi Kesalahan')
 
