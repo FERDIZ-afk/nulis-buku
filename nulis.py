@@ -13,7 +13,7 @@ logo="""
 ╲┏━━━┻━━━┻━━━┓╱         Bot Nulis
 ╲┃╭━╮┏━━━┓╭━╮┃╱   =====================
 ╱┃┃╳┃┣◯-◯┫┃╳┃┃╲
-╱┃╰━╯┣━━━┫╰━╯┃╲   Author : FERDIZ-AFK
+╱┃╰━╯┣━━━┫╰━╯┃╲   Creator : FERDIZ-AFK
 ╱┃┈▊▊▊▊┈▂▃▅▇┈┃╲   WhatsApp : wa.me//6287877173955 
 ╱┗━━━━━━━━━━━┛╲   Github : www.github.com/FERDIZ-afk
 
@@ -23,6 +23,8 @@ MAKE SURE YOUR DEVICE CELLULAR DATA ON
 
 PASTIKAN JIKA tidak terisi minimal anda 
 menggunakan spasi agar tidak error
+
+Untuk hasil tersimpan di internal android
 """
 
 def biasa():
@@ -38,12 +40,14 @@ def biasa():
     if r.status_code == 200:
         r.raw.decode_content = True
         with open('/sdcard/tulis.jpg','wb') as f:
+	     #kalau mau ubah tempat hasil penyimpanan
             shutil.copyfileobj(r.raw, f)
             print('')
             print('tunggu sebentar bos')
             time.sleep(3)
             print('')
-            print('Berhasil, nama file:','/sdcard/tulis.jpg')
+            print('Berhasil, nama file: ','/sdcard/tulis.jpg')
+             #ini juga kalau mau di ubah ngak papa
     else:
         print('Terjadi Kesalahan')
 
